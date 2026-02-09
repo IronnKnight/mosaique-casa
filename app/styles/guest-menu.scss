@@ -1,0 +1,71 @@
+.casa-guest-menu {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+
+    .casa-gm-close {
+        cursor: pointer;
+        top: 0.4rem;
+        right: 0.5rem;
+        background-image: url('./images/casa-x-circle.svg');
+        background-size: 32px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .casa-gm-container {
+        background-color: #FFF;
+        border-radius: 5px;
+        display: flex;
+        padding: 0;
+        overflow-y: auto;
+        height: fit-content;
+
+        @media only screen and (max-width: 992px) {
+            flex-direction: column;
+        }
+
+        .casa-gm-header {
+            background-color: #1F3540;
+            color: #fff;
+            display: flex;
+        }
+
+        .casa-gm-reservation-amount-fluid {
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+
+            .casa-gm-header {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+        }
+
+        .casa-gm-reservation-amount {
+            width: 50%;
+            border-top-left-radius: 5px;
+
+            @media only screen and (max-width: 992px) {
+                width: 100%;
+            }
+        }
+
+        .casa-gm-receipt {
+            width: 50%;
+            border-top-right-radius: 5px;
+            background-color: #f2f2f2;
+
+            @media only screen and (max-width: 992px) {
+                width: 100%;
+            }
+        }
+    }
+}

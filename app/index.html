@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>MosaiqueCasa</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <title>MosaiqueCasa</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{content-for "head"}}
+        {{content-for "head"}}
+        <link rel="icon" type="image/x-icon" href="{{rootURL}}assets/images/mosaique.ico">
+        <link rel="stylesheet" href="{{rootURL}}assets/css/bootstrap.min.css">
+        <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+        <link integrity="" rel="stylesheet" href="{{rootURL}}assets/mosaique-casa.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Sora:wght@100&display=swap"
+            rel="stylesheet">
+        {{content-for "head-footer"}}
+    </head>
+    <body>
+        {{content-for "body"}}
+        <script src="{{rootURL}}assets/js/bootstrap.bundle.min.js"></script>
+        <script src="{{rootURL}}assets/vendor.js"></script>
+        <script src="{{rootURL}}assets/mosaique-casa.js"></script>
 
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/mosaique-casa.css">
-
-    {{content-for "head-footer"}}
-  </head>
-  <body>
-    {{content-for "body"}}
-
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/mosaique-casa.js"></script>
-
-    {{content-for "body-footer"}}
-  </body>
+        {{content-for "body-footer"}}
+    </body>
 </html>

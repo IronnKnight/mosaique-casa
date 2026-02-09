@@ -1,0 +1,38 @@
+{{page-title "Home"}}
+{{#animated-if this.menuStatus use=this.transition}}
+    <GuestMenu
+        @guestName={{this.guestName}}
+        @isGuest={{this.isGuest}}
+        @guestId={{this.guestId}}
+        @guests={{this.model.guests}}
+        @units={{this.model.units}}
+        @foods={{this.model.foods}}
+        @drinks={{this.model.drinks}}
+        @orders={{this.model.orders}}
+        @createOrder={{this.createOrder}}
+        @updateReservation={{this.updateMenu}}
+        @confirmReservation={{this.confirmReservation}}
+        @updateQuantity={{this.updateQuantity}}
+        @checkout={{this.checkout}}
+    ></GuestMenu>
+{{/animated-if}}
+<div class="container-lg {{if this.menuStatus 'blur-index-container'}}">
+    <Navbar/>
+    {{!-- TODO --}}
+    {{!-- <DateTime @date={{this.date}}/> --}}
+    <Listing
+        @reservations={{this.model.reservations}}
+        @createReservation={{this.createReservation}}
+        @deleteReservation={{this.deleteReservation}}
+        @updateReservation={{this.updateMenu}}
+    />
+    <Stats
+        @guests={{this.model.guests}}
+        @units={{this.model.units}}
+    />
+    <Guests
+        @guests={{this.model.guests}}
+        @units={{this.model.units}}
+        @updateGuestOrder={{this.updateMenu}}
+    />
+</div>

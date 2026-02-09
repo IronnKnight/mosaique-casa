@@ -1,0 +1,8 @@
+<div class="row justify-content-evenly mb-2">
+    <div class="col-lg-10 d-flex justify-content-end">
+        {{#let (calculate-available-units @guests @units) as |sum|}}
+            <span class="casa-stats-available py-1 px-3 me-2 rounded">{{sum.available}}</span>
+            <span class="casa-stats-reserved py-1 px-3 rounded">{{sum.reserved}}</span>
+        {{/let}}
+    </div>
+</div>

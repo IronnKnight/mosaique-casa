@@ -1,0 +1,53 @@
+.casa-article-price {
+    background-color: #f2f2f2;
+    width: 3.8rem;
+    text-align: center;
+}
+
+.casa-article-name {
+    background-color: #f2f2f2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    @media only screen and (max-width: 600px) {
+        width: 60%;
+    }
+}
+
+.casa-article-input {
+    width: 2rem;
+    text-align: center;
+
+    &:focus {
+        box-shadow: none;
+        border-color: #ced4da;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    &[type="number"] {
+        -moz-appearance: textfield;
+    }
+}
+
+.casa-increase-value {
+    background-image: url("./images/casa-plus.svg");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.casa-decrease-value {
+    background-image: url("./images/casa-minus.svg");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}

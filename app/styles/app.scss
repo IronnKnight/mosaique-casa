@@ -1,0 +1,20 @@
+// @import './bootstrap.min.css';
+@import "./index";
+@import "./date-time";
+@import "./navbar";
+@import "./guest-menu";
+@import "./guests";
+@import "./guest-menu/article";
+@import "./guest-menu/reservation";
+@import "./guest-menu/receipt";
+@import "./listing";
+@import "./stats";
+@import "./login";
+@import "./admin";
+
+body {
+    background-image: linear-gradient(to top left, #bf2e34 0%, #414052 100%);
+    font-family: "Open Sans", sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

@@ -1,0 +1,17 @@
+.casa-navbar {
+    background-color: #1F3540;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    .casa-navbar-brand {
+        color: #fff;
+
+        &:hover, &:focus {
+            color: #fff;
+        }
+
+        @media only screen and (max-width: 370px) {
+            margin-right: 0!important;
+        }
+    }
+}

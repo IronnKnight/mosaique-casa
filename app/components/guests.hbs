@@ -1,0 +1,14 @@
+<div class="row pb-5 justify-content-evenly">
+    <div class="col-lg-10 ">
+        <ul class="list-group">
+            {{#each @guests as |guest|}}
+                <li class="list-group-item px-2 d-flex flex-wrap justify-content-end" role="button" {{on "click" (fn this.updateGuestOrder guest)}}>
+                    <span class="flex-grow-1 px-2 py-1 rounded">{{guest.name}}</span>
+                    {{#each guest.units as |unit|}}
+                        <span class="casa-gr-unit ms-2 py-1 px-3 rounded">{{show-reserved-units unit @units}}</span>
+                    {{/each}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="col-lg-7 mb-3">
+    <ul class="list-group">
+        {{#each @activeItems as |item|}}
+            <li class="list-group-item d-flex">
+                <span class="casa-admin-item-name flex-grow-1">{{if (eq @activeItem "user") item.username item.name}}</span>
+                {{#if (or (eq @activeItem "food") (eq @activeItem "drink")) }}
+                    <span class="me-3 casa-admin-list-item rounded px-2">{{item.price}}</span>
+                {{/if}}
+                <span class="casa-item-update px-3" {{on "click" (fn @selectItem item.id)}}></span>
+                {{#unless (and (eq @activeItem "user") (eq item.id @loggedUserId))}}
+                    <span class="casa-item-delete px-3 ms-3" {{on "click" (fn @deleteItem item.id)}}></span>
+                {{/unless}}
+            </li>
+        {{/each}}
+    </ul>
+</div>

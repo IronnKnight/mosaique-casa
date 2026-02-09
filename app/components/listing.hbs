@@ -1,0 +1,16 @@
+<div class="row justify-content-center">
+    <div class="col-lg-10 d-lg-flex justify-content-between">
+        <Listing::Form @createReservation={{@createReservation}} />
+        <div class="col-lg-6 mb-3">
+            <ul class="list-group">
+                {{#each @reservations as |reservation|}}
+                <li class="list-group-item ps-2 pe-1 d-flex">
+                    <span class="casa-listing-name flex-grow-1 px-2 py-1 rounded" {{on "click" (fn this.updateReservation reservation)}}>{{reservation.name}}</span>
+                    <span class="casa-listing-nop mx-2 py-1 rounded">x {{reservation.people}}</span>
+                    <span class="casa-remove-item px-4" {{on "click" (fn @deleteReservation reservation.id)}}></span>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+.casa-admin-nav {
+    color: #fff;
+
+    .active {
+        background-color: #fff;
+        color: #1f3540;
+        border-radius: 0.25rem;
+    }
+}
+
+.casa-admin-table {
+    .casa-item-update {
+        background-image: url("./images/casa-pen.svg");
+        background-size: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .casa-item-delete {
+        background-image: url("./images/casa-trash.svg");
+        background-size: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .casa-admin-form {
+        color: #fff;
+    }
+
+    .casa-admin-list-item {
+        background-color: #f2f2f2;
+        color: #000;
+    }
+
+    .casa-admin-item-name {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}

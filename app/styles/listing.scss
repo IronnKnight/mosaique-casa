@@ -1,0 +1,28 @@
+.casa-remove-item {
+    background-image: url('./images/casa-trash.svg');
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.casa-listing-name {
+    background-color: #f2f2f2;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    @media only screen and (max-width: 600px) {
+        width: 70%;
+    }
+}
+
+.casa-listing-nop {
+    background-color: #f2f2f2;
+    width: 3.8rem;
+    text-align: center;
+}

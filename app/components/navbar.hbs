@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-sm navbar-dark casa-navbar mb-4">
+    <div class="container-fluid">
+        <LinkTo @route="index" class="navbar-text casa-navbar-brand text-decoration-none px-2 me-2">Mosaique Casa</LinkTo>
+        {{#if this.session.isAuthenticated}}
+            <LinkTo @route="admin" class="navbar-text casa-navbar-brand text-decoration-none px-2 me-2 flex-grow-1">Admin Panel</LinkTo>
+        {{/if}}
+        {{#if this.session.isAuthenticated}}
+            <span class="navbar-text casa-navbar-brand px-2" role="button" {{on "click" this.logout}}>
+                Logout
+            </span>
+        {{/if}}
+    </div>
+</nav>

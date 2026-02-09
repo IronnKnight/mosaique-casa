@@ -1,0 +1,17 @@
+.casa-date-time {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+
+    .casa-dt-date {
+        width: 30%;
+        background-color: #fff;
+        border-color: #fff;
+        cursor: pointer;
+        caret-color: transparent;
+        background-image: url('./calendar-3.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: 97%;
+    }
+}

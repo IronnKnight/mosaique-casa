@@ -1,0 +1,26 @@
+<div class="casa-gm-header p-3">
+    Make reservation:
+</div>
+<div class="p-3">
+    <form {{on "submit" @confirmReservation}}>
+        <div class="col-lg-6">
+            <label class="form-label">Name: </label>
+            <Input @type="text" @value={{@guestName}} class="casa-reservation-fc-input form-control" name="guestName" />
+        </div>
+        <div class="col-lg-6 my-4">
+            <div class="d-flex flex-wrap">
+                {{#each @units as |unit|}}
+                    {{#if (show-available-units unit.id @guests)}}
+                        <div class="casa-gm-form-check form-check">
+                            <input class="casa-gm-fc-input form-check-input" name="unit" type="checkbox" value={{unit.id}} />
+                            <label class="form-check-label">
+                                {{unit.name}}
+                            </label>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Confirm reservation</button>
+    </form>
+</div>

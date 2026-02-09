@@ -1,0 +1,51 @@
+<div class="casa-gm-receipt">
+    <div class="casa-gm-header p-3">{{@guestName}}</div>
+    <div class="p-2">
+        {{#let (calculate-total @guestId @orders @foods @drinks) as |sum|}}
+            <div class="list-group">
+                <div class="casa-receipt-title list-group-item d-flex">
+                    <div class="flex-grow-1">Foods total:</div>
+                    <div class="casa-receipt-white px-3 rounded">{{sum.foods}}</div>
+                </div>
+                {{#each @orders as |order|}}
+                    {{#if (eq order.guestId @guestId)}}
+                        {{#each order.foods as |f|}}
+                            <div class="list-group-item px-2 d-flex">
+                                <div class="casa-receipt-item-name flex-grow-1">{{show-article-name f.foodId @foods}}</div>
+                                <div class="casa-receipt-lg-item me-2 rounded">x{{f.quantity}}</div>
+                                <div class="casa-receipt-lg-item rounded">{{calculate-article-price f @foods 'foods'}}</div>
+                            </div>
+                        {{/each}}
+                    {{/if}}
+                {{/each}}
+            </div>
+            <div class="list-group my-2">
+                <div class="casa-receipt-title list-group-item d-flex">
+                    <div class="flex-grow-1">Drinks total:</div>
+                    <div class="casa-receipt-white px-3 rounded">{{sum.drinks}}</div>
+                </div>
+                {{#each @orders as |order|}}
+                    {{#if (eq order.guestId @guestId)}}
+                        {{#each order.drinks as |d|}}
+                            <div class="list-group-item px-2 d-flex">
+                                <div class="casa-receipt-item-name flex-grow-1">{{show-article-name d.drinkId @drinks}}</div>
+                                <div class="casa-receipt-lg-item me-2 rounded">x{{d.quantity}}</div>
+                                <div class="casa-receipt-lg-item rounded">{{calculate-article-price d @drinks 'drinks'}}</div>
+                            </div>
+                        {{/each}}
+                    {{/if}}
+                {{/each}}
+            </div>
+            <div class="casa-receipt-title list-group-item d-flex rounded mb-3">
+                <div class="flex-grow-1">Total:</div>
+                <div class="casa-receipt-white px-3 rounded">{{sum.total}}</div>
+            </div>
+            <form {{on "submit" @checkout}}>
+                <GuestMenu::SuccessBtn
+                    @name="Checkout"
+                    @class="px-5 mb-2"
+                />
+            </form>
+        {{/let}}
+    </div>
+</div>

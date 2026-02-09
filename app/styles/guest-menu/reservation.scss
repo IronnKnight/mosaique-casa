@@ -1,0 +1,16 @@
+.casa-reservation-fc-input:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.casa-gm-form-check {
+    min-width: 4rem;
+
+    .casa-gm-fc-input, label {
+        cursor: pointer;
+    }
+
+    .casa-gm-fc-input:focus {
+        box-shadow: none;;
+    }
+}

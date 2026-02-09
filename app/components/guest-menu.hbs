@@ -1,0 +1,42 @@
+<div class="casa-guest-menu">
+    <div class="container-lg casa-gm-container position-relative flex-wrap">
+        <div class="casa-gm-close position-absolute p-4" {{on "click" (fn @updateReservation false '')}}></div>
+        <div class="casa-gm-reservation-amount{{if @isGuest '' (concat '-fluid')}}">
+            {{#if @isGuest}}
+                <form {{on "submit" @createOrder}}>
+                    <GuestMenu::Article
+                        @article={{@foods}}
+                        @name="Food"
+                        @updateQuantity={{@updateQuantity}}
+                    />
+                    <GuestMenu::Article
+                        @article={{@drinks}}
+                        @name="Drinks"
+                        @updateQuantity={{@updateQuantity}}
+                    />
+                    <GuestMenu::SuccessBtn
+                        @name="Order"
+                        @class="px-5 mx-3 my-1 mb-2"
+                    />
+                </form>
+            {{else}}
+                <GuestMenu::Reservation
+                    @confirmReservation={{this.confirmReservation}}
+                    @units={{@units}}
+                    @guests={{@guests}}
+                    @guestName={{@guestName}}
+                />
+            {{/if}}
+        </div>
+        {{#if @isGuest}}
+        <GuestMenu::Receipt
+            @orders={{@orders}}
+            @foods={{@foods}}
+            @drinks={{@drinks}}
+            @guestId={{@guestId}}
+            @guestName={{@guestName}}
+            @checkout={{@checkout}}
+        />
+        {{/if}}
+    </div>
+</div>

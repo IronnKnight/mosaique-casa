@@ -1,0 +1,14 @@
+<div class="casa-gm-header p-3">{{@name}}:</div>
+<div class="p-3 py-2">
+    {{#each @article as |a|}}
+        <div class="py-1 d-flex align-items-center">
+            <div class="casa-article-name px-2 py-1 rounded flex-grow-1">{{a.name}}</div>
+            <div class="casa-article-price mx-2 py-1 rounded">{{a.price}}</div>
+            <div class="d-flex">
+                <div class="casa-decrease-value px-4 py-3" {{on "click" (fn this.updateQuantity a.id 'dec')}}></div>
+                <Input @type="number" @value={{a.quantity}} min="0" name={{create-name-id @name a.id}} class="casa-article-input form-control p-1 mx-2 border-1" />
+                <div class="casa-increase-value px-4 py-3" {{on "click" (fn this.updateQuantity a.id 'inc')}}></div>
+            </div>
+        </div>
+    {{/each}}
+</div>

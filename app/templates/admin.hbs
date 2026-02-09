@@ -1,0 +1,24 @@
+{{page-title "Admin"}}
+<div class="container-lg">
+    <Navbar
+        @parent="admin"
+    />
+    <Admin::Navigation
+        @updateActiveItem={{this.updateActiveItem}}
+    />
+    <div class="row m-0 mt-2 rounded casa-admin-table justify-content-between">
+        <Admin::ItemList
+            @activeItem={{this.activeItem}}
+            @activeItems={{this.activeItems}}
+            @deleteItem={{this.deleteItem}}
+            @selectItem={{this.selectItem}}
+            @loggedUserId={{this.session.data.authenticated.user._id}}
+        />
+        <Admin::ItemForm
+            @activeModel={{this.activeModel}}
+            @activeItem={{this.activeItem}}
+            @saveItem={{this.saveItem}}
+            @cancel={{this.cancel}}
+        />
+    </div>
+</div>

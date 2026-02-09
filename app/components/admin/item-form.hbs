@@ -1,0 +1,26 @@
+<div class="col-lg-4 mb-3">
+    <form class="casa-admin-form" {{on "submit" @saveItem}} autocomplete="off">
+        <div class="mb-3">
+            <label class="form-label">{{if (eq @activeItem "user") "Username" "Name"}}</label>
+            {{#if @activeModel}}
+                <input type="text" class="form-control" name={{if (eq @activeItem "user") "username" "name"}} value={{if (eq @activeItem "user") @activeModel.username @activeModel.name}}>
+            {{else}}
+                <input type="text" class="form-control" name={{if (eq @activeItem "user") "username" "name"}}>
+            {{/if}}
+        </div>
+        {{#if (not-eq @activeItem 'unit')}}
+            <div class="mb-3">
+                <label class="form-label">{{if (eq @activeItem "user") "Password" "Price"}}</label>
+                {{#if (eq @activeItem "user")}}
+                    <input type="password" class="form-control" name="password" autocomplete="new-password">
+                {{else}}
+                    <input type="number" class="form-control" name="price" min="0" value={{if @activeModel @activeModel.price}}>
+                {{/if}}
+            </div>
+        {{/if}}
+        <button type="submit" class="btn btn-success px-4">{{(if @activeModel 'Update' 'Save')}}</button>
+        {{#if @activeModel}}
+            <button type="button" class="btn btn-danger px-4 ms-2" {{on "click" (fn @cancel)}}>Cancel</button>
+        {{/if}}
+    </form>
+</div>

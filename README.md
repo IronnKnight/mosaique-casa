@@ -3,6 +3,23 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+# MY NOTES
+
+Search for todo & comments
+ember-cli-build
+ember build --environment production
+
+# devDependencies
+* `ember-animated`
+* `ember-cli-sass` // maybe
+* `ember-pikaday` // pikaday.js
+* `ember-simple-auth`
+* `sass`
+
+# dependencies
+* `ember-truth-helpers`
+* `moment` // connected with ember-pikaday. check this 
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
