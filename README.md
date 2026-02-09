@@ -30,12 +30,12 @@ A web-based reservation and order management system for restaurants and hospital
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/) (12.x, 14.x, or ≥ 16)
 - [Ember CLI](https://cli.emberjs.com/release/)
-- The companion back-end server — [mosaique-casa-server](https://github.com/<IronnKnight>/mosaique-casa-server)
+- The companion back-end server — [mosaique-casa-server](https://github.com/IronnKnight/mosaique-casa-server)
 
 ## Installation
 
 ```bash
-git clone https://github.com/<IronnKnight>/mosaique-casa.git
+git clone https://github.com/IronnKnight/mosaique-casa.git
 cd mosaique-casa
 npm install
 ```
